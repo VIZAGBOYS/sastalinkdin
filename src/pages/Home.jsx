@@ -55,4 +55,3 @@ function Home() {
 }
 
 export default Home;
- add this background image to the home page /workspaces/sastalinkdin/src/assets/77761.jpg
