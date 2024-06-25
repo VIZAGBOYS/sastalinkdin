@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Container, Grid, Button } from '@mui/material';
 import { styled } from '@mui/system';
+import profilePhoto from '/workspaces/sastalinkdin/src/assets/gunjesh.png';
 
 const ProfileContainer = styled('div')({
   position: 'relative',
@@ -14,16 +15,6 @@ const ProfilePhoto = styled('img')({
   height: 'auto',
   maxWidth: '300px',
   zIndex: 1,
-});
-
-const SplashEffect = styled('img')({
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%',
-  maxWidth: '300px',
-  zIndex: 0,
 });
 
 const ButtonContainer = styled('div')({
@@ -54,8 +45,8 @@ function Home() {
         </Grid>
         <Grid item xs={12} md={6}>
           <ProfileContainer>
-            <SplashEffect src="/src/assets/splash-effect.png" alt="Splash Effect" />
-            <ProfilePhoto src="/src/assets/gunjesh.png" alt="Profile Photo" />
+            
+            <ProfilePhoto src={profilePhoto} alt="Profile Photo" />
           </ProfileContainer>
         </Grid>
       </Grid>
