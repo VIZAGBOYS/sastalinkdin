@@ -8,13 +8,47 @@ const ProfileContainer = styled('div')({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.1)',
+  },
 });
 
 const ProfilePhoto = styled('img')({
-  width: '100%',
+  width: '120%',
   height: 'auto',
-  maxWidth: '300px',
+  maxWidth: '1000px', // Increase the size of the profile picture here
   zIndex: 1,
+  transition: 'opacity 0.3s ease-in-out',
+  '&:hover': {
+    opacity: 0.8,
+  },
+});
+
+const TextContainer = styled('div')({
+  position: 'relative',
+  opacity: 0,
+  transform: 'translateY(20px)',
+  transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
+  '&.show': {
+    opacity: 1,
+    transform: 'translateY(0)',
+  },
+  '&:nth-child(odd)': {
+    transitionDelay: '0.2s',
+  },
+  '&:nth-child(even)': {
+    transitionDelay: '0.4s',
+  },
+});
+
+const CustomButton = styled(Button)({
+  transition: 'background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out',
+  '&:hover': {
+    backgroundColor: '#1976d2', // Adjust the hover color as desired
+    boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.1)', // Add elevation on hover
+    opacity: 0.8, // Adjust opacity on hover
+  },
 });
 
 const ButtonContainer = styled('div')({
@@ -24,28 +58,34 @@ const ButtonContainer = styled('div')({
 });
 
 function Home() {
+  const [isTextVisible, setIsTextVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsTextVisible(true);
+  }, []);
+
   return (
     <Container>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
-          <Typography variant="h3" component="h1" gutterBottom>
-            I'm <span style={{ fontWeight: 'bold' }}>Kate Winslet</span>
-          </Typography>
-          <Typography variant="h4" component="h2" gutterBottom>
-            App Developer
-          </Typography>
+          <TextContainer className={isTextVisible ? 'show' : ''}>
+            <Typography variant="h3" component="h1" gutterBottom>
+              I'm <span style={{ fontWeight: 'bold' }}>Gunjesh Kumar</span>
+            </Typography>
+          </TextContainer>
+          <TextContainer className={isTextVisible ? 'show' : ''}>
+            <Typography variant="h4" component="h2" gutterBottom>
+              App Developer
+            </Typography>
+          </TextContainer>
           <ButtonContainer>
-            <Button variant="contained" color="primary">
+            <CustomButton variant="contained" color="primary">
               Download CV
-            </Button>
-            <Button variant="outlined" color="primary">
-              Play Video
-            </Button>
+            </CustomButton>
           </ButtonContainer>
         </Grid>
         <Grid item xs={12} md={6}>
           <ProfileContainer>
-            
             <ProfilePhoto src={profilePhoto} alt="Profile Photo" />
           </ProfileContainer>
         </Grid>
