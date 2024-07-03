@@ -2,7 +2,6 @@ import React from 'react';
 import { Typography, Container, Grid, Button } from '@mui/material';
 import { styled } from '@mui/system';
 import profilePhoto from '/workspaces/sastalinkdin/src/assets/gunjesh.png';
-
 const ProfileContainer = styled('div')({
   position: 'relative',
   display: 'flex',
@@ -64,6 +63,10 @@ function Home() {
     setIsTextVisible(true);
   }, []);
 
+  const handleDownloadClick = () => {
+    window.location.href = 'https://docs.google.com/document/d/1cAUeBYWfQeETMpywcMTVzw-4oicQ7ItH/export?format=pdf';
+  };
+
   return (
     <Container>
       <Grid container spacing={4} alignItems="center">
@@ -79,7 +82,7 @@ function Home() {
             </Typography>
           </TextContainer>
           <ButtonContainer>
-            <CustomButton variant="contained" color="primary">
+            <CustomButton variant="contained" color="primary" onClick={handleDownloadClick}>
               Download CV
             </CustomButton>
           </ButtonContainer>
