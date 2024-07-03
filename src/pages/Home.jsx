@@ -64,7 +64,7 @@ function Home() {
   }, []);
 
   const handleDownloadClick = () => {
-    window.location.href = 'https://docs.google.com/document/d/1cAUeBYWfQeETMpywcMTVzw-4oicQ7ItH/export?format=pdf';
+    window.location.href = 'https://drive.google.com/uc?export=download&id=15ZWDC-kke7Y1lVK5oO-AJPwSirpId7vs';
   };
 
   return (
