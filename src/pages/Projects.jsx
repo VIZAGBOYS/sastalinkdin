@@ -1,11 +1,14 @@
 import React from 'react';
 import { Grid, Container } from '@mui/material';
 import ProjectCard from '../components/ProjectCard';
+import project1 from '/workspaces/sastalinkdin/src/assets/project2.jpg';
+import project2 from '/workspaces/sastalinkdin/src/assets/project1.jpg';
 
 function Projects() {
   const projectData = [
-    { title: 'Project 1', description: 'Description for project 1', image: 'project1.jpg' },
-    { title: 'Project 2', description: 'Description for project 2', image: 'project2.jpg' },
+    { title: 'SENTIMENT DECTECTOR', description: 'real-time sentiment analysis of tweets, accurately classifying sentiments as positive, negative, or neutral', image: project1 },
+    { title: 'IMAGE IDENTIFIER', description: 'A robust deep neural network for image classification,specifically designed to detect and classify images containing cats', image: project2 },
+    { title: 'SENTIMENT DECTECTOR', description: 'real-time sentiment analysis of tweets, accurately classifying sentiments as positive, negative, or neutral', image: project1 },
     // Add more projects here
   ];
 
